@@ -8,15 +8,11 @@ const seedData = [
   { title: "The Hobbit", author: "J.R.R. Tolkien", price: 11.49, description: "An unexpected journey." },
 ];
 
-let seeded = false;
-
 export default async function seed() {
-  if (seeded) return;
   try {
-    await Book.deleteMany({});
+    await Book.deleteMany({});  // Clear old data
     await Book.insertMany(seedData);
     console.log("5 demo books added!");
-    seeded = true;
   } catch (e) {
     console.log("Seed error:", e.message);
   }
