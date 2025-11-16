@@ -27,3 +27,7 @@ mongoose
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+import paymentRoutes from './routes/payment.js';
+
+// Add this line (after other routes)
+app.use('/api', paymentRoutes);
