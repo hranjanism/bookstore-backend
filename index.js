@@ -12,6 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/books", bookRoutes);
+import paymentRoutes from './routes/payment.js';
+app.use('/api', paymentRoutes);
 
 app.get("/", (req, res) => {
   res.send("Bookstore API is running...");
